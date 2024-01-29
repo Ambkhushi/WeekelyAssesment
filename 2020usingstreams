@@ -1,0 +1,57 @@
+package com.collections.practice;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+class employee{
+	String Name, Degination, Location;
+    int year;
+	public employee(String name, String degination, String location, int year) {
+		super();
+		Name = name;
+		Degination = degination;
+		Location = location;
+		this.year = year;
+	}
+	public String getName() {
+		return Name;
+	}
+	public String getDegination() {
+		return Degination;
+	}
+	public String getLocation() {
+		return Location;
+	}
+	public int getYear() {
+		return year;
+	}
+	@Override
+	public String toString() {
+		return "employee [Name=" + Name + ", Degination=" + Degination + ", Location=" + Location + ", year=" + year
+				+ "]";
+	}
+    
+}
+public class hashmapimpl {
+
+	public static void main(String[] args) {
+
+     Map<Integer,employee>Emap=new HashMap<>();
+		
+  		employee e1=new employee("khushi","Consultant","Noida",2023);
+  		employee e2= new employee("Ayushi", "SystemEngineer","pune",2018);
+  		employee e3= new employee("Gautam", "developer","banglore",2015);
+		
+		  Emap.put(101,e1);
+		  Emap.put(102,e2);
+		  Emap.put(103, e3);
+		
+		//employee who join before2020 using streams 
+		
+		Emap.entrySet().stream().filter(entry->entry.getValue().getYear()<2020)
+		.map(entry->entry.getValue().getName()).forEach(System.out::println);
