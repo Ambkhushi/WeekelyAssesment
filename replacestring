@@ -1,0 +1,12 @@
+public class hashmapimpl {
+	public static void main(String[] args) {
+
+//using replace all method
+		String Name="Khushi Amb";
+		String ReplaceString= Name.replaceAll(".", "%");
+	// using java8 features
+//		String ReplaceString=Name.chars().mapToObj(c->"%").collect(Collectors.joining());
+//		System.out.println(Name);
+//		System.out.println(ReplaceString);
+}
+}
