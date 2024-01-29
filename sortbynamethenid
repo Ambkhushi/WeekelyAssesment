@@ -1,0 +1,49 @@
+package com.collections.practice;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+class emp{
+	String Name;
+	int id;
+	public emp(String name, int id) {
+		super();
+		Name = name;
+		this.id = id;
+	}
+	public String getName() {
+		return Name;
+	}
+	public int getId() {
+		return id;
+	}
+	@Override
+	public String toString() {
+		return "emp [Name=" + Name + ", id=" + id + "]";
+	}
+	
+}
+
+public class hashmapimpl {
+
+	public static void main(String[] args) {
+		
+		//sorting
+		List<emp> e = new ArrayList<>();
+        e.add(new emp("khushi", 101));
+        e.add(new emp("gautam", 102));
+        e.add(new emp("Ayushi", 103));
+        e.add(new emp("Akhil", 104));
+        
+        Collections.sort(e, Comparator.comparing(emp::getName).thenComparing(emp::getId));
+        
+        for (emp em : e) {
+            System.out.println(em);
+        }
+		}
+}
