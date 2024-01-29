@@ -1,0 +1,25 @@
+package com.collections.practice;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class hashmapimpl {
+	public static void main(String[] args) {
+
+   List<Integer>list1=List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+		
+		List<Integer>list2=List.of(2, 4, 6, 8, 10, 12, 1, 14, 16, 0);
+		//using Streams
+		List<Integer>list3=list1.stream().filter(list2::contains).collect(Collectors.toList());
+    System.out.println(list3);
+		//using retain all method 
+		List<Integer>list4=new ArrayList<Integer>(list1);
+		list4.retainAll(list2);
+		System.out.println("using retain all method:"+list4);
+}
+}
